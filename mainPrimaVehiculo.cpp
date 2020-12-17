@@ -21,40 +21,42 @@ string tasa,genero;
 	cout <<"Su valor inicial es " <<vinicial <<"\n";
 	if(tasa=="rojo"){
 		ptasa=(vinicial*3)/100;	
-	}
-	if(tasa=="azul"){
+	}else if(tasa=="azul"){
 		ptasa=(vinicial*2)/100;
-	}
-	if(tasa=="negro"){
+	}else if(tasa=="negro"){
 	    ptasa=(vinicial*2)/100;
-	}
-	if(tasa=="gris"){
+	} else if(tasa=="gris"){
 		ptasa=(vinicial*1.5)/100;
-	}
-	if(tasa=="blanco"){
+	}else if(tasa=="blanco"){
 		ptasa=(vinicial*2)/100;
-	}
+	}else{
+		ptasa=(vinicial*5)/100;
+	    }
 	cout <<"Segun su color es " <<ptasa <<"\n";
+	
 	if(genero=="hombre"){
 		pgenero=(vinicial*5)/100;	
-	}
-	if(genero=="mujer"){
+	}else if(genero=="mujer"){
 		pgenero=(vinicial*3)/100;
-   }		
+   }else{		
+	cout <<"El genero no existe \n";
+		return 0;
+        }
 	cout <<"Segun su genero es " <<pgenero <<"\n";
 	
 	if((edad>=18)&&(edad<=23)){
 		pedad=(vinicial*8)/100;
-	}
-	if((edad>=24)&&(edad<35)){
+	}else if((edad>=24)&&(edad<35)){
 		pedad=(vinicial*5)/100;
-	}
-	if((edad>=35)&&(edad<60)){
+	}else if((edad>=35)&&(edad<60)){
 		pedad=(vinicial*4)/100;
-	}
-	if(edad>=60){
+	}else if(edad>=60){
 		pedad=(vinicial*6)/100;
 	}
+	else{
+	cout <<"El limite de edad no es asegurable \n";
+	return 0;
+	    }	
 	cout <<"Segun su edad es " <<pedad <<"\n";
 	vprima=vinicial+ptasa+pgenero+pedad;
 	cout <<"el valor de la prima de su vehiculo es " <<vprima;
